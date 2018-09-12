@@ -76,7 +76,7 @@ namespace DatingApp.API.Controllers
                 token = tokenHandler.WriteToken(token)
             });
 
-            return StatusCode(500, "Computer really says no!");
+            //return StatusCode(500, "Computer really says no!");
 
         }
     }
