@@ -14,7 +14,10 @@ import { ListsResolver } from "./_resolvers/lists.resolver";
 import { MessagesResolver } from "./_resolvers/messages.resolver";
 
 export const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
+  {
+    path: "",
+    component: HomeComponent
+  },
   {
     path: "",
     runGuardsAndResolvers: "always",
@@ -36,7 +39,11 @@ export const appRoutes: Routes = [
         resolve: { user: MemberEditResolver },
         canDeactivate: [PreventUnsavedChanges]
       },
-      { path: "messages", component: MessagesComponent, resolve: {messages: MessagesResolver}},
+      {
+        path: "messages",
+        component: MessagesComponent,
+        resolve: { messages: MessagesResolver }
+      },
       {
         path: "lists",
         component: ListsComponent,
@@ -45,5 +52,9 @@ export const appRoutes: Routes = [
     ]
   },
 
-  { path: "**", redirectTo: "", pathMatch: "full" }
+  {
+    path: "**",
+    redirectTo: "",
+    pathMatch: "full"
+  }
 ];
